@@ -1,4 +1,7 @@
 
+<head>
+    <meta http-equiv="refresh" content="5">
+</head>
 
 <?php
 $host = '127.0.0.1';
