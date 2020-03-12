@@ -7,6 +7,9 @@
 </form>
 
 <?php
+if(!isset($_COOKIE["logged_in"])){
+    header("Location: index.php");
+}
 
 
 
