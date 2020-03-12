@@ -1,3 +1,10 @@
+<ul>
+    <li><a class="active" href="index.php">Home</a></li>
+    <li><a href="register.php">Register</a></li>
+    <li><a href="create_post.php">Create Post</a></li>
+    <li><a href="login.php">Login</a></li>
+    <li><a href="logout.php">Logout</a></li>
+</ul>
 <center>
     <div class="login_container">
         <h3>Login:</h3>
@@ -8,6 +15,7 @@
         </form>
     </div>
 </center>
+
 
 <link rel="stylesheet" href="style.css">
 <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>

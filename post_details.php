@@ -1,7 +1,15 @@
+<ul>
+    <li><a class="active" href="index.php">Home</a></li>
+    <li><a href="register.php">Register</a></li>
+    <li><a href="create_post.php">Create Post</a></li>
+    <li><a href="login.php">Login</a></li>
+    <li><a href="logout.php">Logout</a></li>
+</ul>
 
 <head>
     <meta http-equiv="refresh" content="5">
 </head>
+
 
 <?php
 $host = '127.0.0.1';

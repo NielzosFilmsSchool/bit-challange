@@ -1,3 +1,11 @@
+
+<ul>
+    <li><a class="active" href="index.php">Home</a></li>
+    <li><a href="register.php">Register</a></li>
+    <li><a href="create_post.php">Create Post</a></li>
+    <li><a href="login.php">Login</a></li>
+    <li><a href="logout.php">Logout</a></li>
+</ul>
 <center>
     <div class="login_container create_post_container">
         <h3>Registreren</h3>

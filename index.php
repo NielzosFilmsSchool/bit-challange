@@ -5,14 +5,6 @@
 <div id='stars2'></div>
 <div id='stars3'></div>
 
-<ul>
-    <li><a class="active" href="#home">Home</a></li>
-    <li><a href="#news">Login</a></li>
-    <li><a href="#contact">Register</a></li>
-    <li><a href="#about">Logout</a></li>
-    <li><a href="#contact">Create Post</a></li>
-</ul>
-
 <div class="title">
     <span>
     Bit-Challange
@@ -25,6 +17,14 @@
     </span>
     </div>
 </div>
+
+<ul>
+    <li><a class="active" href="index.php">Home</a></li>
+    <li><a href="register.php">Register</a></li>
+    <li><a href="create_post.php">Create Post</a></li>
+    <li><a href="login.php">Login</a></li>
+    <li><a href="logout.php">Logout</a></li>
+</ul>
 
 <?php
 $host = '127.0.0.1';
