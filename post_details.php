@@ -27,7 +27,7 @@ try {
         <center>
             <div class="post_details">
                 <h1><?= $row["title"]?></h1>
-                <img src="" alt="Post image">
+                <img src="<?= $row["image_link"]?>" alt="Post image">
                 <p><?= $row["text"]?></p>
             </div>
         </center>
@@ -51,6 +51,7 @@ try {
         </script>
         <input type="text" size="30" id="search" placeholder="Zoeken...">
         <button onclick="search()">Zoek</button>
+        <br><br>
         <form method="POST">
             <input type="text" name="question" placeholder="Stel hier je vraag...">
             <input type="submit" name="submit">
@@ -100,10 +101,14 @@ try {
                     }
                     
                 }else {
-                    if($_GET["sort"] == "asc") {
-                        $stmt = $pdo->query('SELECT * FROM questions WHERE post_id = '.$_GET["post_id"].' ORDER BY question ASC');
-                    }else {
-                        $stmt = $pdo->query('SELECT * FROM questions WHERE post_id = '.$_GET["post_id"].' ORDER BY question DESC');
+                    if(isset($_GET["sort"])) {
+                        if($_GET["sort"] == "asc") {
+                            $stmt = $pdo->query('SELECT * FROM questions WHERE post_id = '.$_GET["post_id"].' ORDER BY question ASC');
+                        }else {
+                            $stmt = $pdo->query('SELECT * FROM questions WHERE post_id = '.$_GET["post_id"].' ORDER BY question DESC');
+                        }
+                    } else {
+                        $stmt = $pdo->query('SELECT * FROM questions WHERE post_id = '.$_GET["post_id"].'');
                     }
                 }
                 if($stmt->rowCount() == 0){
