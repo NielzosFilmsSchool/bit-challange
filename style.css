@@ -101,6 +101,9 @@ html {
 
 body {
     color: white;
+    background-color: black;
+    margin: 0;
+    padding: 0;
 }
 
 .post_container {
@@ -116,4 +119,18 @@ body {
     background-color: white;
     box-shadow: 0px 3px 5px black;
     margin: 20px;
+}
+:root {
+    font-size: 16px ;
+    font-famaly:'Open Sans';
+    text-primary:
+    text-secondary:
+    bg-primary: #23232e;
+    bg-secondary: #141418;
+}
+
+
+main{
+  margin-left: 5rem;
+  padding: 1rem;
 }
