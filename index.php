@@ -1,23 +1,6 @@
 <h1>Post board</h1>
 
-<link rel="stylesheet" href="style.css">
-<link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
-<div id='stars'></div>
-<div id='stars2'></div>
-<div id='stars3'></div>
 
-<div class="title">
-    <span>
-    Bit-Challange
-    </span>
-
-    <br>
-    <div id="names">
-    <span>
-      Powered by Niels, and Iz-Dine
-    </span>
-    </div>
-</div>
 
 <?php
 $host = '127.0.0.1';
@@ -46,7 +29,7 @@ try {
     <?php
     while($row = $stmt->fetch()) {
         ?>
-        <div class="post" onclick="location.href='post_details.php/?post_id=<?= $row['id']?>';">
+        <div class="post" onclick="location.href='post_details.php?post_id=<?= $row['id']?>';">
             <img src="" alt="Post image">
             <h3><?= $row["title"]?></h3>
         </div>
@@ -59,3 +42,22 @@ try {
     echo "<p>Error: ".$e->getMessage()."</p>";
 }
 ?>
+
+<link rel="stylesheet" href="style.css">
+<link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+<div id='stars'></div>
+<div id='stars2'></div>
+<div id='stars3'></div>
+
+<div class="title">
+    <span>
+    Bit-Challange
+    </span>
+
+    <br>
+    <div id="names">
+    <span>
+      Powered by Niels, and Iz-Dine
+    </span>
+    </div>
+</div>
