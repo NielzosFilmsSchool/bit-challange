@@ -2,4 +2,8 @@
 
 <?php
 
+//$question = new Question("vraag", 0);
+
+
+
 ?>
