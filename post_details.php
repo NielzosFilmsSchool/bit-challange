@@ -6,11 +6,6 @@
     <li><a href="logout.php">Logout</a></li>
 </ul>
 
-<head>
-    <meta http-equiv="refresh" content="5">
-</head>
-
-
 <?php
 $host = '127.0.0.1';
 $db   = 'bit_challange';
@@ -64,7 +59,7 @@ try {
         <button onclick="search()">Zoek</button>
         <br><br>
         <form method="POST">
-            <input type="text" name="question" placeholder="Stel hier je vraag...">
+            <input type="text" id="question" name="question" placeholder="Stel hier je vraag...">
             <input type="submit" name="submit">
         </form>
 
