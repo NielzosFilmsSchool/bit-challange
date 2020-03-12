@@ -1,3 +1,5 @@
+<link rel="stylesheet" type="text/css" href="style.css"></link>
+
 <h1>Post board</h1>
 
 <?php
@@ -16,23 +18,27 @@ $options = [
 ?>
 
 <?php
-
 try {
     $pdo = new PDO($dsn, $user, $pass, $options);
     $stmt = $pdo->query('SELECT * FROM post');
     if($stmt->rowCount() == 0){
         throw new Exception("Geen posts gevonden.");
     }
+    ?>
+    <div class="post_container">
+    <?php
     while($row = $stmt->fetch()) {
         ?>
-        <div>
+        <div class="post">
             <img src="" alt="Post image">
             <h3><?= $row["title"]?></h3>
         </div>
         <?php
     }
+    ?>
+    </div>
+    <?php
 } catch (Exception $e) {
     echo "<p>Error: ".$e->getMessage()."</p>";
 }
-
 ?>
