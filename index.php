@@ -1,6 +1,15 @@
-<h1>Post board</h1>
+<div class="title">
+    <span>
+    Bit-Challange
+    </span>
 
-
+    <br>
+    <div id="names">
+    <span>
+      Powered by Niels, and Iz-Dine
+    </span>
+    </div>
+</div>
 
 <?php
 $host = '127.0.0.1';
@@ -30,7 +39,7 @@ try {
     while($row = $stmt->fetch()) {
         ?>
         <div class="post" onclick="location.href='post_details.php?post_id=<?= $row['id']?>';">
-            <img src="" alt="Post image">
+            <img src="<?= $row["image_link"]?>" alt="Post image">
             <h3><?= $row["title"]?></h3>
         </div>
         <?php
@@ -49,15 +58,3 @@ try {
 <div id='stars2'></div>
 <div id='stars3'></div>
 
-<div class="title">
-    <span>
-    Bit-Challange
-    </span>
-
-    <br>
-    <div id="names">
-    <span>
-      Powered by Niels, and Iz-Dine
-    </span>
-    </div>
-</div>

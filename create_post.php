@@ -1,11 +1,14 @@
-<h1>create post page</h1>
-
-<form action="create_post.php" method="post">
-    <input type="file" name="file"><br>
-    <input type="text" name="title" placeholder="Titel"><br>
-    <input type="text" name="text" placeholder="Text..."><br>
-    <input type="submit" name="submit">
-</form>
+<center>
+    <div class="login_container create_post_container">
+        <h3>Post aanmaken</h3>
+        <form action="create_post.php" method="post" id="form">
+            <input type="text" name="image" placeholder="Foto link"><br>
+            <input type="text" name="title" placeholder="Titel"><br>
+            <textarea form="form" width="100" type="text" name="text" placeholder="Text..."></textarea><br>
+            <input type="submit" name="submit">
+        </form>
+    </div>
+</center>
 
 <?php
 $host = '127.0.0.1';
@@ -30,12 +33,16 @@ if(!isset($_COOKIE["logged_in"])){
 if(isset($_POST["submit"])){
     try {
         $pdo = new PDO($dsn, $user, $pass, $options);
-        $stmt = $pdo->prepare(
-            "INSERT INTO post (title, text)
-            VALUES ('".$_POST["title"]."', '".$_POST["text"]."')"
-        );
-        $stmt->execute();
-        header("Location: index.php");
+        if(!empty($_POST["title"]) && !empty($_POST["text"]) && !empty($_POST["image"])) {
+            $stmt = $pdo->prepare(
+                "INSERT INTO post (title, text, image_link)
+                VALUES ('".$_POST["title"]."', '".$_POST["text"]."', '".$_POST["image"]."')"
+            );
+            $stmt->execute();
+            header("Location: index.php");
+        } else {
+            throw new Exception("Je hebt niet alles ingevult");
+        }
     } catch (Exception $e) {
         echo "<p>Error: ".$e->getMessage()."</p>";
     }
@@ -48,16 +55,3 @@ if(isset($_POST["submit"])){
 <div id='stars'></div>
 <div id='stars2'></div>
 <div id='stars3'></div>
-
-<div class="title">
-    <span>
-    Bit-Challange
-    </span>
-
-    <br>
-    <div id="names">
-    <span>
-      Powered by Niels, and Iz-Dine
-    </span>
-    </div>
-</div>

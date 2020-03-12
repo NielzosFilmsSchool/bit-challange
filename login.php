@@ -56,7 +56,7 @@ if(isset($_POST["submit"])){
             }
             while($row = $stmt->fetch()) {
                 if($row["username"] == $_POST["username"] && $row["password"] == $_POST["password"]){
-                    setcookie("logged_in", $row["id"], time() + (60 * 1), "/"); // 86400 = 1 day
+                    setcookie("logged_in", $row["id"], time() + (60 * 60), "/"); // 86400 = 1 day
                     header("Location: index.php");
                 }else {
                     throw new Exception("Het wachtwoord komt niet overeen.");
