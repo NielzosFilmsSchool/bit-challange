@@ -1,4 +1,4 @@
-<h1>Vragen pagina</h1>
+<h1>Login pagina</h1>
 
 <?php
 
