@@ -4,6 +4,15 @@
 <div id='stars'></div>
 <div id='stars2'></div>
 <div id='stars3'></div>
+
+<ul>
+    <li><a class="active" href="#home">Home</a></li>
+    <li><a href="#news">Login</a></li>
+    <li><a href="#contact">Register</a></li>
+    <li><a href="#about">Logout</a></li>
+    <li><a href="#contact">Create Post</a></li>
+</ul>
+
 <div class="title">
     <span>
     Bit-Challange
