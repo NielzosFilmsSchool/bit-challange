@@ -1,10 +1,32 @@
-<h1>Login pagina</h1>
+<center>
+    <div class="login_container">
+        <h3>Login:</h3>
+        <form action="login.php" method="POST">
+            <input type="text" name="username" placeholder="Username"><br>
+            <input type="password" name="password" placeholder="Password"><br>
+            <input type="submit" name="submit"><br>
+        </form>
+    </div>
+</center>
 
-<form action="login.php" method="POST">
-    <input type="text" name="username" placeholder="Username"><br>
-    <input type="password" name="password" placeholder="Password"><br>
-    <input type="submit" name="submit"><br>
-</form>
+<link rel="stylesheet" href="style.css">
+<link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+<div id='stars'></div>
+<div id='stars2'></div>
+<div id='stars3'></div>
+
+<div class="title login_title">
+    <span>
+    Bit-Challange
+    </span>
+
+    <br>
+    <div id="names">
+    <span>
+      Powered by Niels, and Iz-Dine
+    </span>
+    </div>
+</div>
 
 <!-- registreer button hier -->
 
@@ -35,7 +57,7 @@ if(isset($_POST["submit"])){
             while($row = $stmt->fetch()) {
                 if($row["username"] == $_POST["username"] && $row["password"] == $_POST["password"]){
                     setcookie("logged_in", $row["id"], time() + (60 * 1), "/"); // 86400 = 1 day
-                    //redirect
+                    header("Location: index.php");
                 }else {
                     throw new Exception("Het wachtwoord komt niet overeen.");
                 }

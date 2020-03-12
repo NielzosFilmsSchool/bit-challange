@@ -1,12 +1,10 @@
-<h1>Post board</h1>
-
 <link rel="stylesheet" href="style.css">
 <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
 <div id='stars'></div>
 <div id='stars2'></div>
 <div id='stars3'></div>
 
-<div class="title">
+<div class="title login_title">
     <span>
     Bit-Challange
     </span>
@@ -37,13 +35,10 @@ $options = [
 <?php
 try {
     $pdo = new PDO($dsn, $user, $pass, $options);
-    $stmt = $pdo->query('SELECT * FROM post');
+    $stmt = $pdo->query('SELECT * FROM post WHERE id = '.$_GET["post_id"].'');
     if($stmt->rowCount() == 0){
         throw new Exception("Geen posts gevonden.");
     }
-    ?>
-    <div class="post_container">
-    <?php
     while($row = $stmt->fetch()) {
         ?>
         <div class="post" onclick="location.href='post_details.php/?post_id=<?= $row['id']?>';">
@@ -52,10 +47,8 @@ try {
         </div>
         <?php
     }
-    ?>
-    </div>
-    <?php
 } catch (Exception $e) {
     echo "<p>Error: ".$e->getMessage()."</p>";
 }
 ?>
+
