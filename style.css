@@ -78,8 +78,10 @@ html {
   background-size: 100% 100%;
   color: transparent;
   -webkit-background-clip:text;
+}
 
-
+.login_title {
+    top: 32%;
 }
 
 @keyframes animStar {
@@ -112,8 +114,31 @@ body {
     color: black;
     width: 200px;
     height: 250px;
-    border: 1px solid white;
     background-color: white;
-    box-shadow: 0px 3px 5px black;
+    box-shadow: 0px 3px 10px black;
     margin: 20px;
+    transform: scale(1);
+    transition: transform 0.2s;
+}
+.post:hover {
+    transform: scale(1.1);
+}
+
+.login_container{
+    background-image: url('https://wallpaperaccess.com/full/1686055.jpg');
+    background-position: bottom-center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    margin-top: 20%;
+    color: black;
+    padding: 20px;
+    width: 200px;
+    background-color: white;
+    box-shadow: 0px 3px 10px black;
+    text-align: center;
+}
+
+.login_container h3, .login_container input {
+    margin: 5px;
 }
